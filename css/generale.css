@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "raleway";
+    src: url("../font/static/Raleway-Bold.ttf") format("truetype");
+}
+
+.header_scritte {
+    all: unset;
+    white-space: nowrap;
+    font-family: "raleway";
+    color: #616161;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    transition: color 3s, border_bottom 3s;
+}
+
+.header_scritte:hover {
+    all: unset;
+    white-space: nowrap;
+    font-family: "raleway";
+    color: #E2457C;
+    cursor: pointer;
+    border-bottom: solid #E2457C 3px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.header_scritta_selezionato{
+    all: unset;
+    white-space: nowrap;
+    font-family: "raleway";
+    color: #E2457C;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: solid #E2457C 3px;
+    padding-bottom: 20px;
+}
