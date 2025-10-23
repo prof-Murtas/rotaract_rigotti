@@ -1,0 +1,75 @@
+footer {
+    color: black;
+
+}
+
+  /* Contenitore principale per centrare tutto */
+  .footer-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  /* Logo */
+  .footer-logo img {
+    height: 60px;
+  }
+
+  /* Logo */
+  .footer-h3 h3{
+    color: pink;
+  }
+
+  /* Titolo */
+  .footer-title {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+
+  /* Tre sezioni orizzontali */
+  .footer-sections {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 1px;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 1px;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 8px;
+    color: black;
+  }
+
+  .footer-section p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: black;
+  }
+
+  /* Linea di separazione */
+  .footer-line {
+    width: 100%;
+    height: 1px;
+    background-color: pink;
+    margin: 15px 0;
+  }
+
+  /* Testo finale a destra */
+  .footer-bottom {
+    width: 100%;
+    text-align: right;
+    font-size: 0.85em;
+    color: black;
+  }
+
+
+
+
