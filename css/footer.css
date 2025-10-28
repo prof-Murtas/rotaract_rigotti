@@ -1,7 +1,9 @@
-footer {
+/*footer {
     color: black;
-
+    font-size: 12;
+    font-family: sans-serif;
 }
+    */
 
   /* Contenitore principale per centrare tutto */
   .footer-container {
@@ -10,12 +12,19 @@ footer {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-
+    font-family: Mont;
   }
 
   /* Logo */
   .footer-logo img {
-    height: 60px;
+    height: 80px;
+    width: 150px;
+  }
+
+
+  .footer-images {
+    height: 50px;
+    border-radius: 25;
   }
 
   /* Logo */
