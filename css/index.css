@@ -1,0 +1,46 @@
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.testo {
+    padding: 2px;
+    top: 40%;
+    left: 25%;
+    position: absolute;
+    color: #FFFF;
+    transform: translate(0%, -50%);
+    text-align: left;
+}
+
+.testo h1 {
+    font-size: 60px;
+    margin: 10px 0;
+}
+
+.testo h3 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.testo button {
+    border: 2px solid #E2457C;
+    width: 160px;
+    height: 50px;
+    background-color: #E2457C;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-top: 5px;
+    transition: transform 0.3s;
+}
+
+.testo button:hover {
+    transform: scale(1.1);
+}
