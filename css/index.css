@@ -44,3 +44,9 @@
 .testo button:hover {
     transform: scale(1.1);
 }
+
+.numeri {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
