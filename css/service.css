@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "raleway";
+    src: url("../font/static/Raleway-Bold.ttf") format("truetype");
+}
+
+.scritte_interne{
+    all: unset;
+    white-space: nowrap;
+    font-family: "raleway";
+}
