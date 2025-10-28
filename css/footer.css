@@ -1,9 +1,7 @@
-/*footer {
-    color: black;
-    font-size: 12;
-    font-family: sans-serif;
+@font-face {
+  font-family: "raleway";
+  src: url("../font/static/Raleway-Light.ttf") format("truetype");
 }
-    */
 
   /* Contenitore principale per centrare tutto */
   .footer-container {
@@ -12,7 +10,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    font-family: Mont;
+    font-family: "raleway";
   }
 
   /* Logo */
@@ -23,20 +21,17 @@
 
 
   .footer-images {
+    
+    padding: 4px;
     height: 50px;
     border-radius: 25;
   }
 
   /* Logo */
   .footer-h3 h3{
-    color: pink;
+    color: #E2457C;
   }
 
-  /* Titolo */
-  .footer-title {
-    font-size: 1.4em;
-    margin-bottom: 20px;
-  }
 
   /* Tre sezioni orizzontali */
   .footer-sections {
@@ -52,22 +47,17 @@
     margin: 1px;
   }
 
-  .footer-section h3 {
-    margin-bottom: 8px;
-    color: black;
-  }
-
   .footer-section p {
     margin: 5px 0;
     font-size: 0.9em;
-    color: black;
+    color: #313131;
   }
 
   /* Linea di separazione */
   .footer-line {
     width: 100%;
     height: 1px;
-    background-color: pink;
+    background-color: #E2457C;
     margin: 15px 0;
   }
 
@@ -76,9 +66,7 @@
     width: 100%;
     text-align: right;
     font-size: 0.85em;
-    color: black;
+    color: #313131;
   }
-
-
 
 
