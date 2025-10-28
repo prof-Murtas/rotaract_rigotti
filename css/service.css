@@ -1,10 +1,17 @@
 @font-face {
-    font-family: "raleway";
-    src: url("../font/static/Raleway-Bold.ttf") format("truetype");
+    font-family: "ralewayX";
+    src: url("../font/static/Raleway-Light.ttf") format("truetype");
 }
 
 .scritte_interne{
     all: unset;
+    max-width: 20px;
     white-space: nowrap;
-    font-family: "raleway";
+    font-family: "ralewayX";
+    padding: 2px;
+    margin-top: 40%;
+    position: fixed;
+    color: black;
+    text-align: left;
+    width: 20px;
 }
