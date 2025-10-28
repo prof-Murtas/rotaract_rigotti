@@ -1,6 +1,6 @@
-footer {
-    color: black;
-
+@font-face {
+  font-family: "raleway";
+  src: url("../font/static/Raleway-Light.ttf") format("truetype");
 }
 
   /* Contenitore principale per centrare tutto */
@@ -10,24 +10,28 @@ footer {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-
+    font-family: "raleway";
   }
 
   /* Logo */
   .footer-logo img {
-    height: 60px;
+    height: 80px;
+    width: 150px;
+  }
+
+
+  .footer-images {
+    
+    padding: 4px;
+    height: 50px;
+    border-radius: 25;
   }
 
   /* Logo */
   .footer-h3 h3{
-    color: pink;
+    color: #E2457C;
   }
 
-  /* Titolo */
-  .footer-title {
-    font-size: 1.4em;
-    margin-bottom: 20px;
-  }
 
   /* Tre sezioni orizzontali */
   .footer-sections {
@@ -43,22 +47,17 @@ footer {
     margin: 1px;
   }
 
-  .footer-section h3 {
-    margin-bottom: 8px;
-    color: black;
-  }
-
   .footer-section p {
     margin: 5px 0;
     font-size: 0.9em;
-    color: black;
+    color: #313131;
   }
 
   /* Linea di separazione */
   .footer-line {
     width: 100%;
     height: 1px;
-    background-color: pink;
+    background-color: #E2457C;
     margin: 15px 0;
   }
 
@@ -67,9 +66,7 @@ footer {
     width: 100%;
     text-align: right;
     font-size: 0.85em;
-    color: black;
+    color: #313131;
   }
-
-
 
 
