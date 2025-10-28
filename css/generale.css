@@ -3,6 +3,11 @@
     src: url("../font/static/Raleway-Bold.ttf") format("truetype");
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+    
 .header_scritte {
     all: unset;
     white-space: nowrap;
@@ -30,7 +35,7 @@
     transition: color 0.2s, border-bottom-color 0.2s;
 }
 
-.header_scritta_selezionato{
+.header_scritta_selezionato {
     all: unset;
     white-space: nowrap;
     font-family: "raleway";
