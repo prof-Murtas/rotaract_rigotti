@@ -1,16 +1,24 @@
 @font-face {
-  font-family: "raleway";
+  font-family: "ralewayY";
   src: url("../font/static/Raleway-Light.ttf") format("truetype");
 }
+
 
   /* Contenitore principale per centrare tutto */
   .footer-container {
     width: 80%;
     max-width: 1000px;
     margin: 0 auto;
+    
+    position: fixed;
+    bottom: 0;
+    
+    left: 0;
+    right: 0;
+
     display: flex;
     flex-direction: column;
-    font-family: "raleway";
+    font-family: "ralewayY";
   }
 
   /* Logo */
