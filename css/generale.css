@@ -3,16 +3,22 @@
     src: url("../font/static/Raleway-Bold.ttf") format("truetype");
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+    
 .header_scritte {
     all: unset;
     white-space: nowrap;
     font-family: "raleway";
     color: #616161;
+    border-bottom: solid transparent 3px;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 20px;
     padding-top: 20px;
-    transition: color 3s, border_bottom 3s;
+    transition: color 0.2s, border-bottom-color 0.2s;
 }
 
 .header_scritte:hover {
@@ -26,9 +32,10 @@
     padding-right: 40px;
     padding-bottom: 20px;
     padding-top: 20px;
+    transition: color 0.2s, border-bottom-color 0.2s;
 }
 
-.header_scritta_selezionato{
+.header_scritta_selezionato {
     all: unset;
     white-space: nowrap;
     font-family: "raleway";
