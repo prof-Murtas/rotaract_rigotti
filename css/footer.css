@@ -10,7 +10,7 @@
     max-width: 1000px;
     margin: 0 auto;
     
-    position: fixed;
+    position:sticky;
     bottom: 0;
     
     left: 0;

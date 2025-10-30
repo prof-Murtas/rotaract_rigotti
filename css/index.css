@@ -69,6 +69,10 @@ body {
     margin-bottom: 0px;
 }
 
+.numeri h2 {
+    color: #616161;
+}
+
 .numeri div {
     display: flex;
     align-items: center;
@@ -102,6 +106,7 @@ body {
     display: flex;
     white-space: pre-wrap;
     font-family: 'ralewayY';
+    color: #616161;
 }
 
 .sezioneFinale img {
@@ -115,58 +120,67 @@ body {
 .divBtn {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 90px;
+    margin-bottom: 50px;
 }
 
 .instagramBtn {
-    /* Rimuoviamo il border solido per usare un box-shadow più cool */
+    /* Proprietà di base */
     border: none;
-    
     width: 260px;
     height: 50px;
     color: white;
     font-size: 16px;
-    font-weight: bold; /* Rende il testo più incisivo */
-    
-    border-radius: 30px; 
+    font-weight: bold;
+    border-radius: 30px;
     margin-top: 5px;
-    cursor: pointer; /* Importante per l'usabilità */
-    
-    /* === L'Effetto Instagram! === */
-    /* Usiamo un gradiente per simulare i colori del logo Instagram */
-    background-image: linear-gradient(to right, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FCAF45);
-    background-size: 200% auto; /* Prepara l'animazione del gradiente */
-    
-    /* Ombra "Floating" più moderna */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), /* Ombra più scura sotto */
-                0 6px 6px rgba(0, 0, 0, 0.1);  /* Ombra meno pronunciata */
-
-    /* Struttura per allineare ICONA e TESTO (se non è già 'display: flex;') */
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Spazio tra icona e testo */
-
-    /* Transizioni più complete per un effetto più fluido */
+    gap: 8px;
     transition: all 0.5s ease-in-out; 
+
+    /* === STATO NORMALE: DINAMICO E LUMINOSO === */
+    
+    /* Gradiente Animato (visibile all'inizio) */
+    background-image: linear-gradient(to right, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FCAF45);
+    background-size: 200% auto; 
+    background-position: right center; /* INVERTITO: Iniziamo con il gradiente "mosso" */
+    
+    /* Bottone Leggermente Sollevato (Trasformazione base) */
+    transform: translateY(-2px) scale(1.02); 
+    
+    /* Ombra Moderata (Base) */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2),
+                0 4px 5px rgba(0, 0, 0, 0.1);
 }
 
 .instagramBtn:hover {
-    /* Animazione: Sposta e illumina il gradiente */
-    background-position: right center; /* Muove il gradiente per dare l'effetto luce */
+    /* === STATO HOVER: CRESCE, MA IL GRADIENTE SI SPEGNE === */
     
-    /* Solleva leggermente il bottone e lo ingrandisce */
-    transform: translateY(-3px) scale(1.05);
+    /* Animazione: Gradiente Spento/A Riposo */
+    background-position: left center; /* INVERTITO: Torna al gradiente non mosso */
     
-    /* Ombra più pronunciata al passaggio del mouse */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3),
-                0 10px 10px rgba(0, 0, 0, 0.15);
+    /* Solleva ULTERIORMENTE il bottone e lo ingrandisce (Effetto standard) */
+    transform: translateY(-6px) scale(1.08); 
+    
+    /* Ombra molto più pronunciata (Effetto standard) */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .instagramBtn:active {
-    /* Effetto quando si clicca: si "spinge" in giù */
-    transform: translateY(0) scale(1.0);
+    /* === STATO CLICK: SI SCHIACCIA / RIENTRA === */
+    
+    /* Torna quasi alla posizione base (effetto click) */
+    transform: translateY(0) scale(1.0); 
+    
+    /* Ombra di pressione ridotta */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Mantiene il gradiente spento */
+    background-position: left center; 
 }
 
 
