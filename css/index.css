@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "ralewayY";
+    src: url("../font/static/Raleway-Light.ttf") format("truetype");
+}
+
+body {
+    font-family: 'Raleway';
+}
+
 .container {
     position: relative;
     width: 100%;
@@ -60,6 +69,10 @@
     margin-bottom: 0px;
 }
 
+.numeri h2 {
+    color: #616161;
+}
+
 .numeri div {
     display: flex;
     align-items: center;
@@ -67,7 +80,107 @@
 }
 
 .sezioneFinale {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     flex-direction: row;
+    gap: 100px;
 }
+
+.sezioneFinale h1 {
+    color:#E2457C;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.testiSFinale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sezioneFinale p {
+    display: flex;
+    white-space: pre-wrap;
+    font-family: 'ralewayY';
+    color: #616161;
+}
+
+.sezioneFinale img {
+    width: 700px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.divBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    margin-bottom: 50px;
+}
+
+.instagramBtn {
+    /* Proprietà di base */
+    border: none;
+    width: 260px;
+    height: 50px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.5s ease-in-out; 
+
+    /* === STATO NORMALE: DINAMICO E LUMINOSO === */
+    
+    /* Gradiente Animato (visibile all'inizio) */
+    background-image: linear-gradient(to right, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FCAF45);
+    background-size: 200% auto; 
+    background-position: right center; /* INVERTITO: Iniziamo con il gradiente "mosso" */
+    
+    /* Bottone Leggermente Sollevato (Trasformazione base) */
+    transform: translateY(-2px) scale(1.02); 
+    
+    /* Ombra Moderata (Base) */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2),
+                0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.instagramBtn:hover {
+    /* === STATO HOVER: CRESCE, MA IL GRADIENTE SI SPEGNE === */
+    
+    /* Animazione: Gradiente Spento/A Riposo */
+    background-position: left center; /* INVERTITO: Torna al gradiente non mosso */
+    
+    /* Solleva ULTERIORMENTE il bottone e lo ingrandisce (Effetto standard) */
+    transform: translateY(-6px) scale(1.08); 
+    
+    /* Ombra molto più pronunciata (Effetto standard) */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.instagramBtn:active {
+    /* === STATO CLICK: SI SCHIACCIA / RIENTRA === */
+    
+    /* Torna quasi alla posizione base (effetto click) */
+    transform: translateY(0) scale(1.0); 
+    
+    /* Ombra di pressione ridotta */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Mantiene il gradiente spento */
+    background-position: left center; 
+}
+
+

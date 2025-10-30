@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "ralewayY";
+    src: url("../font/static/Raleway-Light.ttf") format("truetype");
+}
+
+body {
+    font-family: 'Raleway';
+    white-space: pre-wrap;   
+}
