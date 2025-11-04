@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "ralewayY";
+    src: url("../font/static/Raleway-Light.ttf") format("truetype");
+}
+
+body {
+    font-family: 'Raleway';
+    white-space: pre-wrap;   
+    margin-top: 80px;
+}
+
+h1 {
+    color: #c11f5d;
+}
+
+.layoutTesto {
+    display: flex;
+    justify-content: center;
+}
+
+.layoutTesto h1 {
+    margin-top: 70px;
+    margin-bottom: 1px;
+}
+
+.layoutTesto p {
+    margin-top: 0px;
+}
+
+.layoutPatrocinatori {
+    display: flex;
+    justify-content: center;
+}
+
+.patrocinatori {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+    padding: 20px 0;
+}
+
+.cardPatrocinatore {
+    display: flex;
+    width: 25%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cardPatrocinatore:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(226, 69, 124, 0.3);
+}
+
+
+

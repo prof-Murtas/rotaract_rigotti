@@ -3,44 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chi siamo - Rotaract Trento</title>
     <link rel="stylesheet" href="../css/chiSiamo.css">
 </head>
 <body>
-    <h1><u>Chi siamo</u></h1>
-    <div>
+    <!-- Fare che c'è un link per approfondire la storia, che è su un'altra pagina -->
+    <h2 id="titolo"><u>Chi siamo</u></h2>
+    <div id="divRuoli">
         <h2>Consiglio Direttivo A.S. 2025-2026</h2>
-        <table>
-            <tr>
+        <table id="tabRuoli">
+            <tr class="rowRuoli">
                 <td>
-                    <div><p><b>Presidente</b>: pres</p></div>
+                    <div><p><b>Presidente</b>: Matteo Bellè</p></div>
                 </td>
                 <td>
-                    <div><p><b>Segretaria</b>: segr</p></div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div><p><b>Vicepresidente</b>: vicepres</p></div>
-                </td>
-                <td>
-                    <div><p><b>Consigliere con delega ai Service</b>: cons</p></div>
+                    <div><p><b>Segretario</b>: Elisabetta Tomasi</p></div>
                 </td>
             </tr>
-            <tr>
+            <tr class="rowRuoli">
                 <td>
-                    <div><p><b>Prefetto</b>: pref</p></div>
+                    <div><p><b>Vicepresidente</b>: Diletta Betti</p></div>
                 </td>
                 <td>
-                    <div><p><b>Consigliera con delega agli Aspiranti</b>: cons2</p></div>
+                    <div><p><b>Tesoriere</b>: Matteo Manara</p></div>
                 </td>
             </tr>
-            <tr>
+            <tr class="rowRuoli">
                 <td>
-                    <div><p><b>Tesoriere</b>: tes</p></div>
+                    <div><p><b>Prefetto</b>: Alessandra Cassaro</p></div>
                 </td>
                 <td>
-                    <div><p><b>Past President</b>: pastpres</p></div>
+                    <div><p><b>Past President</b>: Daniele Di Lucrezia</p></div>
                 </td>
             </tr>
         </table>
@@ -53,18 +46,87 @@
         </table>
     </div>
 
-    <div>
+    <div id="divPres">
+        <!-- posso fare con il rowspan che il nome del presidente viene presentato subito sotto all'anno (punto sulla linea del tempo) -->
         <h2>Presidenti del Rotaract Trento</h2>
         <div id="divLineaTempo">
-            <div class="divElLineaTempo">
+            <table id="tabTempo">
+                <tr class="rigaTempo" id="riga80">
+                    <td></td>
+                    <td><div id="divProva"></div></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="rigaTempo" id="riga90">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="rigaTempo" id="riga00">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="rigaTempo" id="riga10">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="rigaTempo" id="riga20">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <!--
+            <div id="divRigaLineaTempo">
+                <div class="divElLineaTempo">
 
-            </div>
-            <div class="divElLineaTempo">
+                </div>
+                <div class="divElLineaTempo">
 
+                </div>
             </div>
-            <div class="divElLineaTempo">
-
-            </div>
+            -->
         </div>
     </div>
 </body>
