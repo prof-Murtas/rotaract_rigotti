@@ -23,13 +23,11 @@
 
   /* Logo */
   .footer-logo img {
-    height: 80px;
-    width: 150px;
+    width: 200px;
   }
 
 
   .footer-images {
-    
     padding: 4px;
     height: 50px;
     border-radius: 25;
@@ -37,7 +35,7 @@
 
   /* Logo */
   .footer-h3 h3{
-    color: #E2457C;
+    color: #c11f5d;
   }
 
 
@@ -65,7 +63,7 @@
   .footer-line {
     width: 100%;
     height: 1px;
-    background-color: #E2457C;
+    background-color: #c11f5d;
     margin: 15px 0;
   }
 

@@ -25,9 +25,9 @@ body {
     all: unset;
     white-space: nowrap;
     font-family: "raleway";
-    color: #E2457C;
+    color: #c11f5d;
     cursor: pointer;
-    border-bottom: solid #E2457C 3px;
+    border-bottom: solid #c11f5d 3px;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 20px;
@@ -39,11 +39,11 @@ body {
     all: unset;
     white-space: nowrap;
     font-family: "raleway";
-    color: #E2457C;
+    color: #c11f5d;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 20px;
     padding-top: 20px;
-    border-bottom: solid #E2457C 3px;
+    border-bottom: solid #c11f5d 3px;
     padding-bottom: 20px;
 }
