@@ -23,13 +23,11 @@
 
   /* Logo */
   .footer-logo img {
-    height: 80px;
-    width: 150px;
+    width: 200px;
   }
 
 
   .footer-images {
-    
     padding: 4px;
     height: 50px;
     border-radius: 25;
