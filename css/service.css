@@ -6,15 +6,16 @@
 .scritte_interne {
     font-family: "ralewayX";
     color: black;
-    text-align: center;
     max-width: 600px;
     width: 90%;
+    margin-top: 150px;
+    margin-bottom: 50px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;/*
     position: absolute;
     top: 32%;
     left: 63%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
     line-height: 30px;
     text-align: left;
 }
