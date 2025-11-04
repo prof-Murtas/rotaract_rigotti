@@ -6,4 +6,51 @@
 body {
     font-family: 'Raleway';
     white-space: pre-wrap;   
+    margin-top: 80px;
 }
+
+h1 {
+    color: #c11f5d;
+}
+
+.layoutTesto {
+    position:relative;
+    justify-content: center;
+}
+
+.layoutTesto h1 {
+    margin-top: 70px;
+    margin-bottom: 1px;
+}
+
+.layoutTesto p {
+    margin-top: 0px;
+}
+
+.layoutPatrocinatori {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px; /* Spazio tra le card, utile per layout moderni */
+    padding: 20px 0;
+}
+
+.cardPatrocinatore {
+    display: flex;
+    width: 25%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cardPatrocinatore:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px #c11f5d;; /* Ombra con colore Rotaract all'hover */
+}
+
+
+
