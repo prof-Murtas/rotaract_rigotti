@@ -25,7 +25,7 @@ body {
 }
 
 #divPres {
-    width: 80%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,20 +60,80 @@ body {
     
     /* Stile e forma del pallino */
     display: block;
-    width: 12px; 
-    height: 12px; 
+    width: 16px; 
+    height: 16px; 
     background-color: #E2457C; 
     border-radius: 50%; /* Rende l'elemento un cerchio perfetto */
     
     /* Posizionamento */
     position: absolute;
     top: 0%;
-    transform: translateY(-70%);
-    
+    transform: translateY(-68%);    
 }
 
-.rigaTempo td:first-child::before {
-    display: none;
+.rigaTempo:nth-child(odd) td:first-child::before {
+    min-width: 12px;
+    min-height: 12px;
+    width: auto; 
+    height: auto;
+    border-radius: 25%;
+    text-align: center;
+    padding: 4px;
+
+    transform: translate(-10%, -65%);
+
+    /* font */
+    font-family: "ralewayGrasso";
+    font-size: 20px;
+
+    /*allineamento*/
+    text-align: center; 
+}
+
+.rigaTempo:nth-child(even) td:last-child::after {
+    /* Stile e forma del pallino */
+    display: block;
+    background-color: #E2457C; 
+    
+    /* Posizionamento */
+    position: absolute;
+    left: 70%;
+    top: 0%;
+    transform: translateY(-65%);
+
+    min-width: 16px;
+    min-height: 16px;
+    width: fit-content; 
+    height: fit-content;
+    border-radius: 25%;
+    padding: 4px;
+
+    /* font */
+    font-family: "ralewayGrasso";
+    font-size: 20px;
+
+    /*allineamento*/
+    text-align: center; 
+}
+
+#riga80 td:first-child::before {
+    content: "1980";
+}
+
+#riga90 td:last-child::after {
+    content: "1990";
+}
+
+#riga00 td:first-child::before {
+    content: "2000";
+}
+
+#riga10 td:last-child::after {
+    content: "2010";
+}
+
+#riga20 td:first-child::before {
+    content: "2020";
 }
 
 .rigaTempo:nth-child(odd) td:last-child {
@@ -84,9 +144,16 @@ body {
     border-left: solid 6px #616161;
 }
 
-.rigaTempo:last-child td:last-child {
-    border-left: 0px;
+.rigaTempo:nth-child(odd):last-child td:last-child {
     border-right: 0px;
+}
+
+.rigaTempo:nth-child(even):last-child td:first-child {
+    border-left: 0px;
+}
+
+.rigaTempo:nth-child(even) td:first-child::before {
+    display: none;
 }
 
 h2 {
@@ -131,6 +198,16 @@ p {
 
 b {
     font-family: "ralewayExtraGrasso";
+}
+
+#divProva {
+    background-color: black;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    
+    top: 0%;
+    transform: translateY(-68%);  
 }
 
 
