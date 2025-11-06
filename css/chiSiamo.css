@@ -50,20 +50,24 @@ body {
     border-top: solid 6px #616161;
     height: 100px;
     min-width: 30px;
-    width: auto;
+    width: 9%;
+    max-width: 9%;
     position: relative;
     padding: 0px;
 }
 
 .rigaTempo td::before {
-    content: '';
+    content: attr(data-anno);
     
     /* Stile e forma del pallino */
     display: block;
-    width: 16px; 
-    height: 16px; 
+    width: auto; 
+    height: auto; 
+    min-width: 16px;
+    min-height: 16px;
+    padding: 2px;
     background-color: #E2457C; 
-    border-radius: 50%; /* Rende l'elemento un cerchio perfetto */
+    border-radius: 25%;
     
     /* Posizionamento */
     position: absolute;
@@ -200,14 +204,18 @@ b {
     font-family: "ralewayExtraGrasso";
 }
 
-#divProva {
-    background-color: black;
-    width: 16px;
-    height: 16px;
+.divAnno {
+    background-color: transparent;
+    width: auto;
+    height: auto;
     position: absolute;
+    padding: 2px;
+
+    border-radius: 25%;
     
     top: 0%;
     transform: translateY(-68%);  
+
 }
 
 
