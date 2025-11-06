@@ -14,7 +14,7 @@ h1 {
 }
 
 .layoutTesto {
-    position:relative;
+    display: flex;
     justify-content: center;
 }
 
@@ -29,10 +29,15 @@ h1 {
 
 .layoutPatrocinatori {
     display: flex;
+    justify-content: center;
+}
+
+.patrocinatori {
+    display: flex;
     position: relative;
     justify-content: center;
     flex-direction: row;
-    gap: 50px; /* Spazio tra le card, utile per layout moderni */
+    gap: 50px;
     padding: 20px 0;
 }
 
@@ -49,7 +54,7 @@ h1 {
 
 .cardPatrocinatore:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px #c11f5d;; /* Ombra con colore Rotaract all'hover */
+    box-shadow: 0 8px 16px rgba(226, 69, 124, 0.3);
 }
 
 
