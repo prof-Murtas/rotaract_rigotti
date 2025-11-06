@@ -2,22 +2,84 @@
     font-family: "raleway";
     src: url("../font/static/Raleway-Bold.ttf") format("truetype");
 }
+body {
+    margin-top: 200px;
+}
 
 .scritta_grande {
     font-family: "raleway";
     color: #c11f5d;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, 50%);
 }
 
-.form_email{
+
+
+input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #616161;
+    padding: 5px 0; 
+    font-size: 16px;
+    width: 100%;
+}
+
+
+input:focus {
+    border-bottom-color: #c11f5d;
+}
+
+
+label{
+    display: flex;
+    justify-content: left;
+}
+
+/* Generale Contatti */
+.divisione{
     font-family: "raleway";
     color: #616161;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    text-align: center;
+    text-align: center; /* Allinea il TITOLO al centro */
+    width: 100%;
+}
+
+/* Contenitore della Form */
+.formDiv{
+    max-width: 600px;
+    
+    /* Centra il contenitore della form sotto il titolo */
+    margin: 0 auto; 
+
+    
+    
+    /* Allinea gli elementi della form a sinistra all'interno del suo contenitore */
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    flex-direction: column; /* Assicurati che gli elementi vadano a capo */
+    text-align: left; /* Per allineare il testo delle label a sinistra */
+} 
+
+textarea {
+    /* AGGIUNGI QUESTO: espande la textarea al 100% della larghezza */
+    width: 100%; 
+    
+    /* STILI PER LA RIGA SOTTO (come per gli input) */
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #616161;
+    padding: 5px 0; 
+    font-size: 16px;
+    resize: vertical; /* Suggerimento: permette di ridimensionare la textarea solo in verticale */
+    
+    /* Rimuove lo sfondo bianco se necessario */
+    background: transparent; 
+}
+
+/* Aggiungi anche lo stile al focus per la textarea */
+textarea:focus {
+    border-bottom-color: #c11f5d;
+}
+
+form {
+    max-width: 100%;
+
 }
