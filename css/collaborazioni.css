@@ -5,8 +5,12 @@
 
 body {
     font-family: 'Raleway';
-    white-space: pre-wrap;   
-    margin-top: 80px;
+
+    margin-top: 140px;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1 {
@@ -15,26 +19,36 @@ h1 {
 
 .layoutTesto {
     display: flex;
+    font-family: 'RalewayY';
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    white-space: pre-wrap;  
+    margin-bottom: 30px; 
 }
 
 .layoutTesto h1 {
+    font-family: 'Raleway'; 
+    display: flex;
     margin-top: 70px;
     margin-bottom: 1px;
 }
 
 .layoutTesto p {
     margin-top: 0px;
+    text-align: center;
 }
 
 .layoutPatrocinatori {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .patrocinatori {
     display: flex;
-    position: relative;
+
     justify-content: center;
     flex-direction: row;
     gap: 50px;
@@ -43,8 +57,7 @@ h1 {
 
 .cardPatrocinatore {
     display: flex;
-    width: 25%;
-    border: 1px solid #ccc;
+    width: 70%;
     border-radius: 8px;
     text-align: center;
     padding: 20px;
@@ -52,10 +65,20 @@ h1 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.cardPatrocinatore img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .cardPatrocinatore:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(226, 69, 124, 0.3);
 }
 
+.layoutCollaboratori {
+    display: flex;
+    flex-direction: column;
+}
 
 
