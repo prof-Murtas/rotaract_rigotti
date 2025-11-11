@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/contatti.css">
 </head>
 <body>
-    <header style="top: 0; color: white; display: flex; justify-content: center; align-items: center; position: fixed; width: 100%; z-index: 1000; padding: 20px;">
+    <header style="top: 0; background-color: white; display: flex; justify-content: center; align-items: center; position: fixed; width: 100%; z-index: 1000; padding: 20px;">
         <a href="index.html"><img src="../media/Rotaract Club Trento trasparente.png" alt="logo rotaract" width="250px"></a>
         <div style="padding-left:50px; display: flex;">
             <a id="header1" class="header_scritte" href="index.html">Home</a>
@@ -21,29 +21,66 @@
         </div>
     </header>
 
-
     <div class="divisione">
         <div class="titolo">
         <h1 class="scritta_grande">Scrivi in questo form per contattarci</h1>
         </div>
         <br>
         <div class="formDiv">
-            <form action="mailto:rac.trento@rotaract2060.it" method="POST">
+            <form action="mailto:rac.trento@rotaract2060.it" method="POST" >
             
                 <label for="nome_mittente" >Nome</label><br>
-                <input type="text" id="nome_mittente" name="nome_mittente" class="solo-fondo" placeholder="Scrivi il tuo nome" required><br><br>
+                <input type="text" id="nome_mittente" name="nome_mittente" placeholder="Scrivi il tuo nome" required><br><br>
             
-                <label for="email_mittente">Email</label><br>
-                <input type="email" id="email_mittente" name="email_mittente" class="solo-fondo" placeholder="Scrivi il tuo indirizzo email" required><br><br>
+                <label for="email_mittente" >Email</label><br>
+                <input type="email" id="email_mittente" name="email_mittente" placeholder="Scrivi il tuo indirizzo email" required><br><br>
             
                 <label for="messaggio">Messaggio</label><br>
-                <textarea id="messaggio" name="messaggio" rows="5" placeholder="Scrivi qualcosa su di te in questo spazio. Ti risponderemo al più presto!" required></textarea><br><br>
+                <textarea id="messaggio" name="messaggio" rows="5" placeholder="Scrivi qualcosa su di te in questo spazio. Ti risponderemo al più presto!"></textarea><br><br>
             
                 
-                <button type="submit" value="INVIA">INVIA</button>
+                <button type="submit" >INVIA</button>
             </form>
         </div>
     </div>
     
+
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo"><a href="../index.html" > <img src="../media/Rotaract Club Trento trasparente.png" alt="logo rotaract"></a></div>
+        
+            <div class="footer-h3"><h3>Rotaract Club Trento</h3></div>
+        
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h5>Sede:</h5>
+                    <p>Piazza Dante 20</p>
+                    <p>38122, Trento (TN)</p>
+                </div>
+
+                <div class="footer-section" >
+                    <h5>Contatti:</h5>
+                    <p>Email: rac.trento@rotaract2060.it</p>
+                </div>
+
+                <div class="footer-section" style="margin-top: 20px; margin-left: 100px;">
+                    <a href="https://www.facebook.com/rotaracttrento/?locale=it_IT"><img class="footer-images" src="../media/facebook.png" alt="logo facebook" width="50px" ></a>
+                    <a href="https://www.instagram.com/rotaractclubtrento/"><img class="footer-images" src="../media/ig2.png" alt="logo instagram" width="50px"></a>
+                </div>
+            </div>
+
+
+            <div class="footer-line"></div>
+
+            <div class="footer-bottom">
+                Rotaract Club Trento © 2025 | Privacy Policy | Cookie Policy | Realizzato da <a href="https://buonarroti.tn.it">Buonarroti Trento</a>
+            </div>
+
+            <br>
+        </div>
+    </footer>
+
 </body>
 </html>
+
