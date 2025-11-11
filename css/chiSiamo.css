@@ -52,6 +52,7 @@ body {
     min-width: 30px;
     width: 9%;
     max-width: 9%;
+    min-width: 52px;
     position: relative;
     padding: 0px;
 }

@@ -1,6 +1,4 @@
-
 var divs = document.getElementsByClassName("divAnno");
-console.log(divs);
 
 const presidenti = [
     { nome: "Alessandro Condini", mandato: "1985-1986" },
@@ -46,29 +44,91 @@ const presidenti = [
     { nome: "Matteo Bellè", mandato: "2025-2026" }
 ];
 
-    var i=0;
-    var ia = 9;
-    Array.from(divs).forEach(div => {
-        div.addEventListener("mouseenter", handleMouseEnter);
-        div.addEventListener("mouseleave", handleMouseLeave);
+var i=0;
+var ia = 9;
+Array.from(divs).forEach(div => {
+    div.addEventListener("mouseenter", handleMouseEnter);
+    div.addEventListener("mouseleave", handleMouseLeave);
 
-        var anno = parseInt(presidenti[i].mandato.split("-")[0]);
-        if ((parseInt(anno/10))%2==1) {
-            anno = anno + ia;
-            ia -= 2;
+    var anno = parseInt(presidenti[i].mandato.split("-")[0]);
+    if ((parseInt(anno/10))%2==1) {
+        anno = anno + ia;
+        ia -= 2;
 
-            div.setAttribute("data-anno", anno + "-" + (anno + 1));
-            div.innerHTML = anno + "-" + (anno + 1);
-            div.parentElement.setAttribute("data-anno", anno + "-" + (anno + 1));
-        } else {
-            ia = 9;
+        div.setAttribute("data-anno", anno + "-" + (anno + 1));
+        div.innerHTML = anno + "-" + (anno + 1);
+        div.parentElement.setAttribute("data-anno", anno + "-" + (anno + 1));
+    } else {
+        ia = 9;
 
-            div.setAttribute("data-anno", presidenti[i].mandato);
-            div.innerHTML = presidenti[i].mandato;
-            div.parentElement.setAttribute("data-anno", presidenti[i].mandato);
+        div.setAttribute("data-anno", presidenti[i].mandato);
+        div.innerHTML = presidenti[i].mandato;
+        div.parentElement.setAttribute("data-anno", presidenti[i].mandato);
+    }
+    i ++;
+});
+
+creaLineaTempo();
+
+
+
+
+async function creaLineaTempo() {
+    const percorso = window.location + "/../../src/presidenti.csv";
+    var righeTesto = await caricaPresidenti(percorso);
+    var righeT = righeTesto.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(riga => riga.trim() !== '');
+    var righe = new Array(0);
+
+    var r;
+    for (var i = 0; i < righeT.length; i++) {
+        if (!righeT[i].trim() == "") {
+            r = righeT[i].split(",");
+            righe.push({nome: r[0].trim(), mandato: r[1].trim()});
         }
-        i ++;
+    }
+
+    var offsetStart = parseInt(righe[0].mandato.split("-")[0].trim())%10;
+    var offsetFine = parseInt(righe[righe.length-1].mandato.split("-")[0].trim())%10;
+    var nRigheColonna = Math.floor((righe.length+offsetStart)/10);
+    if ((righe.length+offsetStart)%10 != 0) {
+        nRigheColonna ++;
+    }
+
+    costruisciLineaTempo(nRigheColonna, offsetStart, offsetFine, righe);
+
+
+}
+
+function costruisciLineaTempo(nRighe, offStart, offFine, listaPresidenti) {
+    var tabella = document.getElementById("tabTempo");
+
+    costruisciTabella(nRighe, 10, "tabTempo");
+    
+    listaPresidenti.forEach(presidente => {
+        //integrare qui la parte statica in modo che attributi e contenuti siano assegnati dinamicamente;
+        //ricordarsi di usare l'offset iniziale, e penso che quello finale sia inutile
     });
+}
+
+function costruisciTabella(nR, nC, id) {
+    var t = document.getElementById(id);
+
+    for (var i = 0; i < nR; i++) {
+        var r = document.createElement("tr");
+        for (var j = 0; i < nC; j++) {
+            var c = document.createElement("td");
+            r.appendChild(c);
+        }
+        t.appendChild(r);
+    }
+}
+
+//rifare gestione errori per tutto
+async function caricaPresidenti(percorso) {
+    const response = await fetch(percorso);
+    const testoCSV = await response.text();
+    return testoCSV;
+}
 
 function handleMouseEnter() {
     var casella = this.parentElement;
