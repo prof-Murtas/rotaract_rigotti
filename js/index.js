@@ -109,4 +109,21 @@ window.onload = () => {
     aggiornaCarosello(); // Calcola l'altezza iniziale e mostra la prima slide
     creaIndicatori();
     startAutoplay(); // Avvia lo scorrimento automatico!
+
+
+    //incrementa numeri home
+    incrementaNumeri(56, "n1", 8);
+    incrementaNumeri(37, "n2", 10);
+    incrementaNumeri(250, "n3", 2);
+    incrementaNumeri(8, "n4", 60);
+
 };
+
+
+function incrementaNumeri(fine, id, secondi) {
+    for (let i = 1; i <= fine; i++) {
+      setTimeout(() => {
+        document.getElementById(id).innerHTML = i;
+      }, i * secondi);
+    }
+  }
