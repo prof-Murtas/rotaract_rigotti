@@ -1,9 +1,7 @@
-/* -------------------
-   FONTS E COLORI
-   ------------------- */
-   @font-face {
+@font-face {
+
     font-family: "ralewayY";
-    /* Assicurati che il percorso sia corretto rispetto al file CSS */
+
     src: url("../font/static/Raleway-Light.ttf") format("truetype"); 
     font-weight: 300;
 }
@@ -19,11 +17,11 @@
 }
 
 :root {
-    --color-rotaract-main: #c11f5d; /* Il tuo Rosa/Bordeaux */
+    --color-rotaract-main: #c11f5d;
     --color-rotaract-light: #e599b5;
-    --color-background: #f8f8f8;
+
     --color-text: #333;
-    /* La riga verde che hai visto */
+    
     --color-accent-green: #c11f5d; 
 }
 
@@ -42,9 +40,14 @@ h1, h2, h3, strong {
     color: #222;
 }
 
-/* -------------------
-   HEADER E CTA
-   ------------------- */
+
+.page-title{
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+
 .hero-section, .cta-section {
     text-align: center;
     padding: 40px 20px;
@@ -68,9 +71,7 @@ h1, h2, h3, strong {
     background-color: #a0104a;
 }
 
-/* -------------------
-   TIMELINE STYLES (LOGICA ROBUSTA)
-   ------------------- */
+
 .timeline-container {
     position: relative;
     max-width: 1000px;
@@ -86,6 +87,7 @@ h1, h2, h3, strong {
     bottom: 0;
     left: 50%;
     margin-left: -2px;
+    border-radius: 5px;
 }
 
 .timeline-item {
@@ -97,9 +99,7 @@ h1, h2, h3, strong {
 
     box-sizing: border-box;
     
-    /* * STATO DI BASE (SENZA JS): Tutto è visibile.
-     * La transizione serve per animare quando la classe 'is-visible' viene aggiunta.
-    */
+    
     opacity: 1;
     transform: translateX(0);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -108,26 +108,24 @@ h1, h2, h3, strong {
 .timeline-item:nth-child(odd) { left: 0; text-align: right; }
 .timeline-item:nth-child(even) { left: 50%; }
 
-/* STATO 1: "Pronto per l'animazione" (Aggiunto da JS) */
-/* Questa classe nasconde gli elementi, preparandoli per l'animazione "in" */
+
 .timeline-item.js-animate-ready {
     opacity: 0;
 }
 .timeline-item:nth-child(odd).js-animate-ready {
-    transform: translateX(-50px); /* Parte da sinistra */
+    transform: translateX(-50px);
 }
 .timeline-item:nth-child(even).js-animate-ready {
-    transform: translateX(50px); /* Parte da destra */
+    transform: translateX(50px);
 }
 
-/* STATO 2: "Visibile" (Aggiunto da JS allo scorrimento) */
-/* Questo riporta gli elementi al loro stato di base (opacity: 1, transform: 0) */
+
 .timeline-item.is-visible {
     opacity: 1;
     transform: translateX(0);
 }
 
-/* Sostituisci la vecchia regola .timeline-dot con QUESTA: */
+
 .timeline-dot {
     position: absolute;
     width: 20px;
@@ -137,25 +135,22 @@ h1, h2, h3, strong {
     border-radius: 50%;
     z-index: 10;
     
-    /* * Correzione Verticale:
-     * Allinea il punto con l'inizio del testo del titolo.
-     * (padding-top 10px dell'item + padding-top 20px del content = 30px)
-    */
+    
     top: 30px; 
 }
 
 .timeline-item:nth-child(odd) .timeline-dot {
-    /* Posiziona il punto sul bordo destro dell'item (che è la linea di mezzo) */
+    
     right: 0;
-    /* Centra il punto sulla linea (metà della sua larghezza totale 20px + 6px border = 26px) */
+    
     margin-right: -13px; 
 }
 
-/* Per gli item a DESTRA (even) */
+
 .timeline-item:nth-child(even) .timeline-dot {
-    /* Posiziona il punto sul bordo sinistro dell'item (che è la linea di mezzo) */
+    
     left: 0;
-    /* Centra il punto sulla linea */
+    
     margin-left: -13px;
 }
 
@@ -179,9 +174,7 @@ h1, h2, h3, strong {
     font-weight: 700;
 }
 
-/* -------------------
-   MEDIA QUERY MOBILE
-   ------------------- */
+
 @media (max-width: 768px) {
     .timeline-line {
         left: 20px;
@@ -190,7 +183,7 @@ h1, h2, h3, strong {
         width: 100%;
         padding-left: 45px;
         padding-right: 15px;
-        left: 0 !important; /* Rimuove il posizionamento alternato */
+        left: 0 !important;
         text-align: left !important;
     }
     
@@ -199,7 +192,7 @@ h1, h2, h3, strong {
         margin-left: -10px;
     }
     
-    /* Su mobile, l'animazione è solo un fade-in, non uno slide */
+    
     .timeline-item:nth-child(odd).js-animate-ready,
     .timeline-item:nth-child(even).js-animate-ready {
         transform: translateX(0);
