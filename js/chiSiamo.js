@@ -48,6 +48,15 @@ var i=0;
 var ia = 9;
 Array.from(divs).forEach(div => {
     div.addEventListener("mouseenter", handleMouseEnter);
+    /*
+    const observer = new ResizeObserver(entries => {
+        // Il codice di ridimensionamento va qui
+        for (let entry of entries) {
+            handleResize(entry.target); // Passa l'elemento che è stato ridimensionato
+        }
+    });
+    observer.observe(div);
+    */
     div.addEventListener("mouseleave", handleMouseLeave);
 
     var anno = parseInt(presidenti[i].mandato.split("-")[0]);
@@ -68,14 +77,20 @@ Array.from(divs).forEach(div => {
     i ++;
 });
 
-creaLineaTempo();
 
+
+//creaLineaTempo();
+/*
+function handleResize(element) {
+    element.style.transform = "translateX("+(-68+(this.clientWidth/2))+"%)";
+}
+    */
 
 
 
 async function creaLineaTempo() {
-    const percorso = window.location + "/../../src/presidenti.csv";
-    var righeTesto = await caricaPresidenti(percorso);
+    var righeTesto = "ciao";
+    righeTesto = caricaPresidenti();
     var righeT = righeTesto.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(riga => riga.trim() !== '');
     var righe = new Array(0);
 
@@ -104,10 +119,32 @@ function costruisciLineaTempo(nRighe, offStart, offFine, listaPresidenti) {
 
     costruisciTabella(nRighe, 10, "tabTempo");
     
+    var ctr = offStart;
+    console.log(ctr);
+    /*
     listaPresidenti.forEach(presidente => {
-        //integrare qui la parte statica in modo che attributi e contenuti siano assegnati dinamicamente;
+        div.addEventListener("mouseenter", handleMouseEnter);
+        div.addEventListener("mouseleave", handleMouseLeave);
+
+        var anno = parseInt(presidenti[i].mandato.split("-")[0]);
+        if ((parseInt(anno/10))%2==1) {
+            anno = anno + ia;
+            ia -= 2;
+
+            div.setAttribute("data-anno", anno + "-" + (anno + 1));
+            div.innerHTML = anno + "-" + (anno + 1);
+            div.parentElement.setAttribute("data-anno", anno + "-" + (anno + 1));
+        } else {
+            ia = 9;
+
+            div.setAttribute("data-anno", presidenti[i].mandato);
+            div.innerHTML = presidenti[i].mandato;
+            div.parentElement.setAttribute("data-anno", presidenti[i].mandato);
+        }
+        i ++;
         //ricordarsi di usare l'offset iniziale, e penso che quello finale sia inutile
     });
+    */
 }
 
 function costruisciTabella(nR, nC, id) {
@@ -124,10 +161,10 @@ function costruisciTabella(nR, nC, id) {
 }
 
 //rifare gestione errori per tutto
-async function caricaPresidenti(percorso) {
-    const response = await fetch(percorso);
-    const testoCSV = await response.text();
-    return testoCSV;
+async function caricaPresidenti() {
+    var res = await fetch("../php/getPresidenti.php")
+    var testo = await res.text();
+    return testo;
 }
 
 function handleMouseEnter() {
