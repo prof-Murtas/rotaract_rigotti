@@ -89,8 +89,7 @@ function handleResize(element) {
 
 
 async function creaLineaTempo() {
-    var righeTesto = "ciao";
-    righeTesto = caricaPresidenti();
+    var righeTesto = await caricaPresidenti();
     var righeT = righeTesto.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(riga => riga.trim() !== '');
     var righe = new Array(0);
 
@@ -121,7 +120,6 @@ function costruisciLineaTempo(nRighe, offStart, offFine, listaPresidenti) {
     
     var ctr = offStart;
     console.log(ctr);
-    /*
     listaPresidenti.forEach(presidente => {
         div.addEventListener("mouseenter", handleMouseEnter);
         div.addEventListener("mouseleave", handleMouseLeave);
@@ -162,9 +160,9 @@ function costruisciTabella(nR, nC, id) {
 
 //rifare gestione errori per tutto
 async function caricaPresidenti() {
-    var res = await fetch("../php/getPresidenti.php")
-    var testo = await res.text();
-    return testo;
+    const response = await fetch("../php/getPresidenti.php");
+    const testoCSV = await response.text();
+    return testoCSV;
 }
 
 function handleMouseEnter() {
