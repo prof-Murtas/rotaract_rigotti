@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi siamo - Rotaract Trento</title>
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/generale.css">
     <link rel="stylesheet" href="../css/chiSiamo.css">
 </head>
 <body>
+
+    <header style="top: 0; background-color: white; display: flex; justify-content: center; align-items: center; position: fixed; width: 100%; z-index: 1000; padding: 20px;">
+        <a href="../index.html"><img src="../media/Rotaract Club Trento trasparente.png" alt="logo rotaract" width="250px"></a>
+        <div style="padding-left:50px; display: flex;">
+            <a id="header1" class="header_scritte" href="../index.html">Home</a>
+            <a id="header2" class="header_scritta_selezionato" href="chiSiamo.html">Chi siamo</a>
+            <a id="header3" class="header_scritte" href="service.html">Service</a>
+            <a id="header4" class="header_scritte" href="eventi.html">Eventi</a>
+            <a id="header5" class="header_scritte" href="collaborazioni.html">Collaborazioni con il rotary</a>
+            <a id="header6" class="header_scritte" onmouseover="" href="contatti.html">Contatti</a>
+        </div>
+    </header>
+
+
     <!-- Fare che c'è un link per approfondire la storia, che è su un'altra pagina -->
     <h2 id="titolo"><u>Chi siamo</u></h2>
     <div id="divRuoli">
@@ -39,11 +55,10 @@
         </table>
     </div>
 
-    <div>
-        <h2>Presidenti del Gruppo Giovani del Rotary Trento</h2>
-        <table>
+    <div class="storia">
+        
 
-        </table>
+        <a href="storia.html"><button>SCOPRI LA NOSTRA STORIA</button></a>
     </div>
 
     <div id="divPres">
@@ -129,6 +144,44 @@
             -->
         </div>
     </div>
+
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo"><a href="index.html" > <img src="../media/Rotaract Club Trento trasparente.png" alt="logo rotaract"></a></div>
+        
+            <div class="footer-h3"><h3>Rotaract Club Trento</h3></div>
+        
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h5>Sede:</h5>
+                    <p>Piazza Dante 20</p>
+                    <p>38122, Trento (TN)</p>
+                </div>
+
+                <div class="footer-section" >
+                    <h5>Contatti:</h5>
+                    <p>Email: rac.trento@rotaract2060.it</p>
+                </div>
+
+                <div class="footer-section" style="margin-top: 20px;">
+                    <img class="footer-images" src="../media/facebook.png" alt="logo facebook" width="50px">
+                    <img class="footer-images" src="../media/ig2.png" alt="logo instagram" width="50px">
+                </div>
+            </div>
+
+            <div class="footer-line"></div>
+
+            <div class="footer-bottom">
+                Rotaract Club Trento © 2025 | Privacy Policy | Cookie Policy | Realizzato da <a href="https://buonarroti.tn.it">Buonarroti Trento</a>
+            </div>
+
+            <br>
+        </div>
+    </footer>
 
     <script src="../js/chiSiamo.js"></script>
 </body>
