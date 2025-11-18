@@ -24,6 +24,24 @@ body {
     gap: 40px;
 }
 
+.storia button {
+    border: 2px solid #c11f5d;
+    width: 250px;
+    height: 50px;
+    background-color: #c11f5d;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-top: 5px;
+    transition: transform 0.3s;
+    font-family: "Raleway";
+}
+
+.storia button:hover {
+    transform: scale(1.1);
+}
+
+
 #divPres {
     width: 60%;
     display: flex;
@@ -62,18 +80,21 @@ body {
     
     /* Stile e forma del pallino */
     display: block;
-    width: auto; 
-    height: auto; 
     min-width: 16px;
     min-height: 16px;
     padding: 2px;
     background-color: #E2457C; 
     border-radius: 25%;
+    white-space: nowrap;
     
     /* Posizionamento */
     position: absolute;
     top: 0%;
-    transform: translateY(-68%);    
+    transform: translateY(-68%); 
+    
+    width: fit-content; 
+    height: auto; 
+    right: 70%;
 }
 
 .rigaTempo:nth-child(odd) td:first-child::before {
@@ -207,16 +228,16 @@ b {
 
 .divAnno {
     background-color: transparent;
-    width: auto;
-    height: auto;
     position: absolute;
     padding: 2px;
+    white-space: nowrap;
 
     border-radius: 25%;
     
     top: 0%;
-    /*left: 50%;
-    transform: translate(-50%, -68%); */
+    width: fit-content; 
+    height: auto; 
+    right: 70%;
     transform: translateY(-68%);
 
 }

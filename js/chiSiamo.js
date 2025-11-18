@@ -60,19 +60,43 @@ Array.from(divs).forEach(div => {
     div.addEventListener("mouseleave", handleMouseLeave);
 
     var anno = parseInt(presidenti[i].mandato.split("-")[0]);
+    var annod;
     if ((parseInt(anno/10))%2==1) {
-        anno = anno + ia;
+        anno = (anno + ia)%100;
+        annod = (anno+1)%100;
+        if (annod==0) {
+            annod = "00"
+        }
+        if (annod.toString().length<2) {
+            annod="0"+annod
+        }
+        if (anno.toString().length<2) {
+            anno="0"+anno
+        }
         ia -= 2;
 
-        div.setAttribute("data-anno", anno + "-" + (anno + 1));
-        div.innerHTML = anno + "-" + (anno + 1);
-        div.parentElement.setAttribute("data-anno", anno + "-" + (anno + 1));
+        div.setAttribute("data-anno", "'" + anno + "-" + "'" +  annod);
+        div.setAttribute("data-nome", presidenti[i].nome);
+        div.innerHTML = "'" + anno + "-" + "'" +  annod;
+        div.parentElement.setAttribute("data-anno", "'" + anno + "-" + "'" +  annod);
     } else {
+        anno = anno%100
+        annod = (anno+1)%100;
+        if (annod==0) {
+            annod = "00"
+        }
+        if (annod.toString().length<2) {
+            annod="0"+annod
+        }
+        if (anno.toString().length<2) {
+            anno="0"+anno
+        }
         ia = 9;
 
-        div.setAttribute("data-anno", presidenti[i].mandato);
-        div.innerHTML = presidenti[i].mandato;
-        div.parentElement.setAttribute("data-anno", presidenti[i].mandato);
+        div.setAttribute("data-anno", "'" + anno + "-" + "'" +  annod);
+        div.setAttribute("data-nome", presidenti[i].nome);
+        div.innerHTML = "'" + anno + "-" + "'" +  annod;
+        div.parentElement.setAttribute("data-anno", "'" + anno + "-" + "'" +  annod);
     }
     i ++;
 });
@@ -89,8 +113,7 @@ function handleResize(element) {
 
 
 async function creaLineaTempo() {
-    var righeTesto = "ciao";
-    righeTesto = caricaPresidenti();
+    var righeTesto = await caricaPresidenti();
     var righeT = righeTesto.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(riga => riga.trim() !== '');
     var righe = new Array(0);
 
@@ -121,7 +144,6 @@ function costruisciLineaTempo(nRighe, offStart, offFine, listaPresidenti) {
     
     var ctr = offStart;
     console.log(ctr);
-    /*
     listaPresidenti.forEach(presidente => {
         div.addEventListener("mouseenter", handleMouseEnter);
         div.addEventListener("mouseleave", handleMouseLeave);
@@ -144,7 +166,7 @@ function costruisciLineaTempo(nRighe, offStart, offFine, listaPresidenti) {
         i ++;
         //ricordarsi di usare l'offset iniziale, e penso che quello finale sia inutile
     });
-    */
+    
 }
 
 function costruisciTabella(nR, nC, id) {
@@ -162,9 +184,9 @@ function costruisciTabella(nR, nC, id) {
 
 //rifare gestione errori per tutto
 async function caricaPresidenti() {
-    var res = await fetch("../php/getPresidenti.php")
-    var testo = await res.text();
-    return testo;
+    const response = await fetch("../php/getPresidenti.php");
+    const testoCSV = await response.text();
+    return testoCSV;
 }
 
 function handleMouseEnter() {
@@ -178,7 +200,7 @@ function handleMouseEnter() {
     const infoPres = document.createElement('p');
     infoPres.className = 'info-pres-hover'; 
     
-    infoPres.innerHTML = showPresidente(this.getAttribute("data-anno"));
+    infoPres.innerHTML = showPresidente(this.getAttribute("data-nome"));
 
     const br = document.createElement('br');
     br.className = 'info-pres-hover';
@@ -198,10 +220,10 @@ function handleMouseLeave() {
     });
 }
 
-function showPresidente(a) {
+function showPresidente(n) {
     var msg = "";
     presidenti.forEach(pres => {
-        if (pres.mandato === a) {
+        if (pres.nome === n) {
             msg = pres.nome;
         }
     });
