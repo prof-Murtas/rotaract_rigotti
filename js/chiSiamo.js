@@ -142,7 +142,7 @@ function costruisciLineaTempo(nRighe, offStart, offFine, listaPresidenti) {
         i ++;
         //ricordarsi di usare l'offset iniziale, e penso che quello finale sia inutile
     });
-    */
+    
 }
 
 function costruisciTabella(nR, nC, id) {
