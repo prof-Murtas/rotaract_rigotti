@@ -1,0 +1,113 @@
+.pagina-bollettini {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* --- SEZIONE 1: ULTIMO NUMERO (Minimal & Pulito) --- */
+.ultimo-numero {
+    background-color: #fae8ef; /* Verde molto chiaro, rilassante */
+    border-left: 6px solid #c11f5d; /* Accento verde volontariato */
+    padding: 25px;
+    border-radius: 4px;
+    margin-bottom: 40px; /* Spazio prima dell'archivio */
+}
+
+.ultimo-label {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    color: #c11f5d;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.ultimo-titolo {
+    margin: 0 0 10px 0;
+    font-size: 1.8em;
+    color: #c11f5d;
+}
+
+.btn-scarica {
+    display: inline-block;
+    background-color: #c11f5d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: transform 0.3s;
+}
+
+.btn-scarica:hover {
+    transform: scale(1.1);
+}
+
+/* --- SEZIONE 2: ARCHIVIO STORICO (Gestione di molti elementi) --- */
+.titolo-archivio {
+    font-size: 1.2em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* Questo contenitore gestisce i "molti" giornalini */
+.lista-scrollabile {
+    max-height: 300px; /* Altezza fissa: se supera, appare la scrollbar */
+    overflow-y: auto;  /* Abilita lo scorrimento verticale */
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* Stile della singola riga dell'archivio */
+.riga-archivio {
+    display: flex;
+    justify-content: space-between; /* Data a sinistra, titolo/link a destra */
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.riga-archivio:last-child {
+    border-bottom: none;
+}
+
+.riga-archivio:hover {
+    background-color: #f9f9f9;
+}
+
+.data-archivio {
+    font-family: monospace; /* Per allineare bene le date */
+    color: #888;
+    font-size: 0.9em;
+    min-width: 100px; /* Mantiene l'allineamento */
+}
+
+.link-archivio {
+    color: #333;
+    text-decoration: none;
+    flex-grow: 1; /* Occupa lo spazio rimanente */
+    padding-left: 15px;
+}
+
+.link-archivio:hover {
+    color: #c11f5d;
+    text-decoration: underline;
+}
+
+/* Personalizzazione Scrollbar (Opzionale - per renderla più carina su Chrome/Safari) */
+.lista-scrollabile::-webkit-scrollbar {
+    width: 8px;
+}
+.lista-scrollabile::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.lista-scrollabile::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
