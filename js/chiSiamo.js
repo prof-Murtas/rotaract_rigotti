@@ -48,6 +48,15 @@ var i=0;
 var ia = 9;
 Array.from(divs).forEach(div => {
     div.addEventListener("mouseenter", handleMouseEnter);
+    /*
+    const observer = new ResizeObserver(entries => {
+        // Il codice di ridimensionamento va qui
+        for (let entry of entries) {
+            handleResize(entry.target); // Passa l'elemento che è stato ridimensionato
+        }
+    });
+    observer.observe(div);
+    */
     div.addEventListener("mouseleave", handleMouseLeave);
 
     var anno = parseInt(presidenti[i].mandato.split("-")[0]);
@@ -68,8 +77,14 @@ Array.from(divs).forEach(div => {
     i ++;
 });
 
-creaLineaTempo();
 
+
+//creaLineaTempo();
+/*
+function handleResize(element) {
+    element.style.transform = "translateX("+(-68+(this.clientWidth/2))+"%)";
+}
+    */
 
 
 
@@ -127,6 +142,7 @@ function costruisciLineaTempo(nRighe, offStart, offFine, listaPresidenti) {
         i ++;
         //ricordarsi di usare l'offset iniziale, e penso che quello finale sia inutile
     });
+    */
 }
 
 function costruisciTabella(nR, nC, id) {

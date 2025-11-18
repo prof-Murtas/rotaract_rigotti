@@ -3,6 +3,7 @@
     src: url("../font/static/Raleway-Light.ttf") format("truetype");
 }
 
+
 .carosello-container {
     position: relative;
     width: 800px;
@@ -133,6 +134,7 @@ body {
     border-radius: 30px;
     margin-top: 5px;
     transition: transform 0.3s;
+    font-family: "Raleway";
 }
 
 .testo button:hover {
@@ -186,6 +188,23 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.testiSFinale button {
+    border: 2px solid #c11f5d;
+    width: 250px;
+    height: 50px;
+    background-color: #c11f5d;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-top: 5px;
+    transition: transform 0.3s;
+    font-family: "Raleway";
+}
+
+.testiSFinale button:hover {
+    transform: scale(1.1);
 }
 
 .sezioneFinale p {
