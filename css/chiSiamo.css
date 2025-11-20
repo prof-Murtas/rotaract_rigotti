@@ -142,23 +142,23 @@ body {
     text-align: center; 
 }
 
-#riga80 td:first-child::before {
+#riga1980 td:first-child::before {
     content: "1980";
 }
 
-#riga90 td:last-child::after {
+#riga1990 td:last-child::after {
     content: "1990";
 }
 
-#riga00 td:first-child::before {
+#riga2000 td:first-child::before {
     content: "2000";
 }
 
-#riga10 td:last-child::after {
+#riga2010 td:last-child::after {
     content: "2010";
 }
 
-#riga20 td:first-child::before {
+#riga2020 td:first-child::before {
     content: "2020";
 }
 
