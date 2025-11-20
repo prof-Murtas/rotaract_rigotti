@@ -1,3 +1,4 @@
+/*
 var divs = document.getElementsByClassName("divAnno");
 
 const presidenti = [
@@ -48,7 +49,7 @@ var i=0;
 var ia = 9;
 Array.from(divs).forEach(div => {
     div.addEventListener("mouseenter", handleMouseEnter);
-    /*
+    //commento da
     const observer = new ResizeObserver(entries => {
         // Il codice di ridimensionamento va qui
         for (let entry of entries) {
@@ -56,7 +57,7 @@ Array.from(divs).forEach(div => {
         }
     });
     observer.observe(div);
-    */
+    //commento a
     div.addEventListener("mouseleave", handleMouseLeave);
 
     var anno = parseInt(presidenti[i].mandato.split("-")[0]);
@@ -64,9 +65,6 @@ Array.from(divs).forEach(div => {
     if ((parseInt(anno/10))%2==1) {
         anno = (anno + ia)%100;
         annod = (anno+1)%100;
-        if (annod==0) {
-            annod = "00"
-        }
         if (annod.toString().length<2) {
             annod="0"+annod
         }
@@ -82,9 +80,6 @@ Array.from(divs).forEach(div => {
     } else {
         anno = anno%100
         annod = (anno+1)%100;
-        if (annod==0) {
-            annod = "00"
-        }
         if (annod.toString().length<2) {
             annod="0"+annod
         }
@@ -101,92 +96,116 @@ Array.from(divs).forEach(div => {
     i ++;
 });
 
+*/
 
+creaLineaTempo();
 
-//creaLineaTempo();
-/*
-function handleResize(element) {
-    element.style.transform = "translateX("+(-68+(this.clientWidth/2))+"%)";
-}
-    */
-
-
+//rifare gestione errori per tutto
+//rifare CSS per adattarlo alla costruzione dinamica
 
 async function creaLineaTempo() {
-    var righeTesto = await caricaPresidenti();
-    var righeT = righeTesto.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(riga => riga.trim() !== '');
-    var righe = new Array(0);
+    var jsonPresidenti = await caricaPresidenti();
 
-    var r;
-    for (var i = 0; i < righeT.length; i++) {
-        if (!righeT[i].trim() == "") {
-            r = righeT[i].split(",");
-            righe.push({nome: r[0].trim(), mandato: r[1].trim()});
-        }
-    }
-
-    var offsetStart = parseInt(righe[0].mandato.split("-")[0].trim())%10;
-    var offsetFine = parseInt(righe[righe.length-1].mandato.split("-")[0].trim())%10;
-    var nRigheColonna = Math.floor((righe.length+offsetStart)/10);
-    if ((righe.length+offsetStart)%10 != 0) {
+    var offsetStart = parseInt(jsonPresidenti.presidenti[0].mandato.split("-")[0].trim())%10;
+    //var offsetFine = parseInt(jsonPresidenti.presidenti[jsonPresidenti.presidenti.length-1].mandato.split("-")[0].trim())%10;
+    var nRigheColonna = Math.floor((jsonPresidenti.presidenti.length+offsetStart)/10);
+    if ((jsonPresidenti.presidenti.length+offsetStart)%10 != 0) {
         nRigheColonna ++;
     }
 
-    costruisciLineaTempo(nRigheColonna, offsetStart, offsetFine, righe);
+    costruisciLineaTempo(nRigheColonna, offsetStart, jsonPresidenti.presidenti);
 
 
 }
 
-function costruisciLineaTempo(nRighe, offStart, offFine, listaPresidenti) {
+function costruisciLineaTempo(nRighe, offStart, listaPresidenti) {
     var tabella = document.getElementById("tabTempo");
 
-    costruisciTabella(nRighe, 10, "tabTempo");
-    
+    var aDiv = costruisciTabella(parseInt(listaPresidenti[0].mandato.split("-")[0]), nRighe, 11, "tabTempo");
+
     var ctr = offStart;
-    console.log(ctr);
+    var ia = 9;
     listaPresidenti.forEach(presidente => {
+        //problema: facendo anno + ia il presidente per l'anno viene sbagliato; megli ciclare sui div a sto punto
+        if (ctr%11==0) {
+            aDiv[ctr].className = "";
+            ctr ++;
+        }
+        var div = aDiv[ctr];
         div.addEventListener("mouseenter", handleMouseEnter);
         div.addEventListener("mouseleave", handleMouseLeave);
 
-        var anno = parseInt(presidenti[i].mandato.split("-")[0]);
-        if ((parseInt(anno/10))%2==1) {
-            anno = anno + ia;
+        var anno = parseInt(presidente.mandato.split("-")[0]);
+        var annod;
+        if (Math.floor(parseInt(anno/10))%2==1) {
+            anno = (anno + ia)%100;
+            annod = (anno+1)%100;
+            if (annod.toString().length<2) {
+                annod="0"+annod
+            }
+            if (anno.toString().length<2) {
+                anno="0"+anno
+            }
             ia -= 2;
 
-            div.setAttribute("data-anno", anno + "-" + (anno + 1));
-            div.innerHTML = anno + "-" + (anno + 1);
-            div.parentElement.setAttribute("data-anno", anno + "-" + (anno + 1));
+            div.setAttribute("data-anno", "'" + anno + "-" + "'" +  annod);
+            div.setAttribute("data-nome", presidente.nome);
+            div.innerHTML = "'" + anno + "-" + "'" +  annod;
+            div.parentElement.setAttribute("data-anno", "'" + anno + "-" + "'" +  annod);
         } else {
+            anno = anno%100
+            annod = (anno+1)%100;
+            if (annod.toString().length<2) {
+                annod="0"+annod
+            }
+            if (anno.toString().length<2) {
+                anno="0"+anno
+            }
             ia = 9;
 
-            div.setAttribute("data-anno", presidenti[i].mandato);
-            div.innerHTML = presidenti[i].mandato;
-            div.parentElement.setAttribute("data-anno", presidenti[i].mandato);
+            div.setAttribute("data-anno", "'" + anno + "-" + "'" +  annod);
+            div.setAttribute("data-nome", presidente.nome);
+            div.innerHTML = "'" + anno + "-" + "'" +  annod;
+            div.parentElement.setAttribute("data-anno", "'" + anno + "-" + "'" +  annod);
         }
-        i ++;
-        //ricordarsi di usare l'offset iniziale, e penso che quello finale sia inutile
+        
+
+        ctr ++;
     });
     
 }
 
-function costruisciTabella(nR, nC, id) {
+function costruisciTabella(annoIniziale, nR, nC, id) {
     var t = document.getElementById(id);
+    var divList = new Array(0);
+    var decennio = Math.floor(annoIniziale/10);
 
     for (var i = 0; i < nR; i++) {
         var r = document.createElement("tr");
-        for (var j = 0; i < nC; j++) {
+        r.id = "riga" + decennio + "0";
+        r.className = "rigaTempo";
+
+        for (var j = 0; j < nC; j++) {
             var c = document.createElement("td");
+            var d = document.createElement("div");
+
+            d.className = "divAnno";
+
+            divList.push(d);
+            c.appendChild(d);
             r.appendChild(c);
         }
         t.appendChild(r);
+        decennio ++;
     }
+
+    return divList;
 }
 
-//rifare gestione errori per tutto
 async function caricaPresidenti() {
-    const response = await fetch("../php/getPresidenti.php");
-    const testoCSV = await response.text();
-    return testoCSV;
+    const response = await fetch("../src/presidenti.json");
+    const testoJson = await response.json();
+    return testoJson;
 }
 
 function handleMouseEnter() {
@@ -200,7 +219,7 @@ function handleMouseEnter() {
     const infoPres = document.createElement('p');
     infoPres.className = 'info-pres-hover'; 
     
-    infoPres.innerHTML = showPresidente(this.getAttribute("data-nome"));
+    infoPres.innerText = this.getAttribute("data-nome");
 
     const br = document.createElement('br');
     br.className = 'info-pres-hover';
@@ -218,15 +237,4 @@ function handleMouseLeave() {
             casella.removeChild(el);
         }
     });
-}
-
-function showPresidente(n) {
-    var msg = "";
-    presidenti.forEach(pres => {
-        if (pres.nome === n) {
-            msg = pres.nome;
-        }
-    });
-
-    return msg;
 }
